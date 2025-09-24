@@ -2,7 +2,8 @@
 
 :root {
   --font-family: var(--font-poppins);
-  --font-family: var(--font-inter);
+  --default-font-family: var(--font-inter);
+  color: white;
 }
 
 @theme inline {
@@ -11,4 +12,5 @@
   --color-charade: #262636;
   --color-ebony-clay: #25253b;
   --color-mandy: #e44c57;
+  --color-martinique: #302c44;
 }
