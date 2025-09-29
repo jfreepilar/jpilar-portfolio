@@ -1,9 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --font-family: var(--font-poppins);
-  --default-font-family: var(--font-inter);
-  color: white;
+  --accent-9: theme(colors.mandy);
 }
 
 @theme inline {
@@ -14,3 +12,33 @@
   --color-mandy: #e44c57;
   --color-martinique: #302c44;
 }
+
+h1 {
+  font-family: var(--font-poppins) !important;
+}
+
+h2 {
+  font-size: 1.5rem !important;
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+@media screen and (min-width: 1024px) {
+  h2 {
+    font-size: 2.25rem !important;
+    text-align: start;
+  }
+
+  p {
+    text-align: start;
+  }
+}
+
+/* @media screen and (min-width: 768px) {
+  h2 {
+    font-size: 1.75rem !important;
+  }
+} */

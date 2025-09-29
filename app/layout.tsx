@@ -1,4 +1,4 @@
-import { Container } from "@radix-ui/themes";
+import { Container, Theme, ThemePanel } from "@radix-ui/themes";
 import "@radix-ui/themes/styles.css";
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
@@ -30,11 +30,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${poppins.variable} ${inter.variable}`}>
-      <body className="bg-ebony-clay/99">
-        <NavBar />
-        <main className=" max-w-6xl mx-auto h-[300vh]">
-          <Container>{children}</Container>
-        </main>
+      <body className="">
+        <Theme
+          className="!bg-ebony-clay !text-white !font-inter"
+          accentColor="gray"
+        >
+          {/* <ThemePanel /> */}
+          <NavBar />
+          <main className=" max-w-6xl mx-auto">
+            <Container p="2">{children}</Container>
+          </main>
+        </Theme>
       </body>
     </html>
   );

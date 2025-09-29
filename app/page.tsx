@@ -1,3 +1,10 @@
+import AboutMe from "@/sections/AboutMe";
+import { Section } from "@radix-ui/themes";
+
 export default function Home() {
-  return <div></div>;
+  return (
+    <Section>
+      <AboutMe />
+    </Section>
+  );
 }
