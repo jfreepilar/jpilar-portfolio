@@ -13,8 +13,15 @@
   --color-martinique: #302c44;
 }
 
-h1 {
+h1,
+h2,
+h3 {
   font-family: var(--font-poppins) !important;
+}
+
+h1 {
+  margin-bottom: 2rem;
+  color: var(--color-mandy);
 }
 
 h2 {

@@ -1,10 +1,12 @@
 import AboutMe from "@/sections/AboutMe";
+import Skill from "@/sections/Skill";
 import { Section } from "@radix-ui/themes";
 
-export default function Home() {
+export default async function Home() {
   return (
     <Section>
       <AboutMe />
+      <Skill />
     </Section>
   );
 }

@@ -9,7 +9,8 @@ datasource db {
 
 model Skill {
   id          String @id @default(auto()) @map("_id") @db.ObjectId
-  image       String
-  skill       String
+  image       String?
+  icon        String[]
+  title       String
   description String
 }
