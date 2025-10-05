@@ -29,8 +29,14 @@ h2 {
   text-align: center;
 }
 
+h3 {
+  font-size: 0.75rem !important;
+}
+
 p {
   text-align: center;
+  font-family: var(--font-inter) !important;
+  font-size: 0.6rem !important;
 }
 
 @media screen and (min-width: 1024px) {
@@ -49,3 +55,13 @@ p {
     font-size: 1.75rem !important;
   }
 } */
+
+@media screen and (min-width: 640px) {
+  h3 {
+    font-size: 1rem !important;
+  }
+
+  p {
+    font-size: 0.8rem !important;
+  }
+}
