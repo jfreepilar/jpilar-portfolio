@@ -27,6 +27,7 @@ const LinkButton = ({ githubLink, domainLink }: LinkButtonProp) => {
     <>
       {buttonContent.map((content, index) => (
         <Link
+          key={index}
           href={`${index === 0 ? githubLink : domainLink}`}
           target="_blank"
           rel="noopener noreferer"

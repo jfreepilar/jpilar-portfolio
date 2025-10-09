@@ -1,14 +1,6 @@
-import RenderIcon from "@/components/RenderIcon";
+import Card from "@/components/Card";
 import { prisma } from "@/prisma/client";
-import {
-  Card,
-  Container,
-  Flex,
-  Grid,
-  Heading,
-  Section,
-  Text,
-} from "@radix-ui/themes";
+import { Container, Grid, Heading, Section } from "@radix-ui/themes";
 
 const Skill = async () => {
   const skills = await prisma.skill.findMany();
@@ -22,25 +14,13 @@ const Skill = async () => {
           gapX="9"
           gapY="8"
         >
-          {skills.map((skill, index) => (
+          {skills.map((skill) => (
             <Card
-              key={index}
-              variant="ghost"
-              className="bg-martinique rounded-none! h-[270px] pt-8! px-8! pb-0!"
-            >
-              <Flex direction="column" gapY="3">
-                <Flex gap="2">
-                  <RenderIcon iconFromDB={skill.icon} />
-                </Flex>
-                <Heading as="h3" size="2" weight="bold">
-                  {skill.title}
-                </Heading>
-
-                <Text as="p" size="1" className="text-left!">
-                  {skill.description}
-                </Text>
-              </Flex>
-            </Card>
+              key={skill.id}
+              icon={skill.icon}
+              title={skill.title}
+              description={skill.description}
+            />
           ))}
         </Grid>
       </Container>

@@ -1,12 +1,12 @@
 "use client";
 
-import { Box, Flex, Heading, Card as RadixCard, Text } from "@radix-ui/themes";
+import { Flex, Heading, Card as RadixCard, Text } from "@radix-ui/themes";
 import RenderIcon from "./RenderIcon";
-
 import Image from "next/image";
 import LinkButton from "./LinkButton";
 
 interface cardProps {
+  key: string;
   icon?: string[];
   image?: string;
   alt?: string;
@@ -14,10 +14,10 @@ interface cardProps {
   description: string;
   github?: string;
   domain?: string;
-  index: number;
 }
 
 const Card = ({
+  key,
   icon,
   image,
   alt,
@@ -25,14 +25,12 @@ const Card = ({
   description,
   github,
   domain,
-  index,
 }: cardProps) => {
   const isImage = image !== undefined;
-  console.log(github, domain);
 
   return (
     <RadixCard
-      key={index}
+      key={key}
       variant="ghost"
       className={`bg-martinique p-0! rounded-none! ${
         isImage
