@@ -39,6 +39,11 @@ p {
   font-size: 0.6rem !important;
 }
 
+::placeholder {
+  color: gray !important;
+  font-style: italic;
+}
+
 @media screen and (min-width: 1024px) {
   h2 {
     font-size: 2.25rem !important;
