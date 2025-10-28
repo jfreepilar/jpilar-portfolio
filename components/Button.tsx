@@ -4,7 +4,7 @@ import { Button as RadixButton } from "@radix-ui/themes";
 
 interface Props {
   text: string;
-  type: "button" | "submit";
+  type?: "button" | "submit";
   width?: string;
 }
 

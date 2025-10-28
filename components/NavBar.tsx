@@ -27,7 +27,7 @@ const NavBar = () => {
 
   return (
     <nav
-      className={`mb-5 h-12 p-3 bg-charade z-10 ${
+      className={`mb-5 h-12 p-3 bg-charade z-10 border-b-1 border-b-white/10 ${
         fixed ? "fixed w-full" : "relative"
       }`}
     >
