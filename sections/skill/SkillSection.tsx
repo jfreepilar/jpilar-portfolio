@@ -1,10 +1,10 @@
+"use client";
+
 import Card from "@/components/Card";
-import { prisma } from "@/prisma/client";
 import { Container, Grid, Heading, Section } from "@radix-ui/themes";
+import { Skill } from "@prisma/client";
 
-const Skill = async () => {
-  const skills = await prisma.skill.findMany();
-
+const SkillClient = async ({ skills }: { skills: Skill[] }) => {
   return (
     <Section>
       <Heading as="h1">Skill-Set</Heading>
@@ -28,4 +28,4 @@ const Skill = async () => {
   );
 };
 
-export default Skill;
+export default SkillClient;

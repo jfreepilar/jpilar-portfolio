@@ -1,10 +1,8 @@
 import Card from "@/components/Card";
-import { prisma } from "@/prisma/client";
+import { Project } from "@prisma/client";
 import { Grid } from "@radix-ui/themes";
 
-const ProjectSmallScreen = async () => {
-  const projects = await prisma.project.findMany();
-
+const ProjectSmallScreen = async ({ projects }: { projects: Project[] }) => {
   return (
     <Grid
       display={{ initial: "grid", md: "none" }}

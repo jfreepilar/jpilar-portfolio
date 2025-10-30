@@ -1,11 +1,9 @@
-import { Box, Flex, Grid } from "@radix-ui/themes";
-import { prisma } from "@/prisma/client";
-import Image from "next/image";
 import LinkButton from "@/components/LinkButton";
+import { Project } from "@prisma/client";
+import { Box, Flex, Grid } from "@radix-ui/themes";
+import Image from "next/image";
 
-const ProjectLargerScreen = async () => {
-  const projects = await prisma.project.findMany();
-
+const ProjectLargerScreen = async ({ projects }: { projects: Project[] }) => {
   const boxStyling = (index: number) => {
     if (index === 0 || index === 4) {
       return "row-span-2 h-full";

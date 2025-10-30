@@ -1,15 +1,15 @@
 import AboutMe from "@/sections/AboutMe";
 import ConnectWithMe from "@/sections/ConnectWithMe";
-import Project from "@/sections/project/Project";
-import Skill from "@/sections/Skill";
+import ProjectSection from "@/sections/project/ProjectSection";
+import SkillSection from "@/sections/skill/SkillClient";
 import { Section } from "@radix-ui/themes";
 
 export default async function Home() {
   return (
     <Section>
       <AboutMe />
-      <Skill />
-      <Project />
+      <SkillSection />
+      <ProjectSection />
       <ConnectWithMe />
     </Section>
   );
