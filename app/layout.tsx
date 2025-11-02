@@ -1,10 +1,12 @@
-import { Container, Theme, ThemePanel } from "@radix-ui/themes";
+import DotNavigation from "@/components/dot-navigation/DotNavigation";
+import Footer from "@/components/Footer";
+import { NavigationInViewProvider } from "@/context/NavigationInViewProvider";
+import { Box, Container, Theme } from "@radix-ui/themes";
 import "@radix-ui/themes/styles.css";
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import NavBar from "../components/NavBar";
 import "./globals.css";
-import Footer from "@/components/Footer";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -36,11 +38,15 @@ export default function RootLayout({
           className="!bg-ebony-clay !text-white !font-inter"
           accentColor="gray"
         >
-          {/* <ThemePanel /> */}
           <NavBar />
-          <main className=" max-w-6xl mx-auto">
-            <Container p="2">{children}</Container>
-          </main>
+          <NavigationInViewProvider>
+            <Box p="2">
+              <Container>{children}</Container>
+              <Box className="fixed top-38 right-1 xl:right-20 z-50">
+                <DotNavigation />
+              </Box>
+            </Box>
+          </NavigationInViewProvider>
           <Footer />
         </Theme>
       </body>

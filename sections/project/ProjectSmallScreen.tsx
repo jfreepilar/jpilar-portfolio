@@ -2,7 +2,7 @@ import Card from "@/components/Card";
 import { Project } from "@prisma/client";
 import { Grid } from "@radix-ui/themes";
 
-const ProjectSmallScreen = async ({ projects }: { projects: Project[] }) => {
+const ProjectSmallScreen = ({ projects }: { projects: Project[] }) => {
   return (
     <Grid
       display={{ initial: "grid", md: "none" }}

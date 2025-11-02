@@ -8,9 +8,11 @@ import { Box, Heading, Section, TextArea, TextField } from "@radix-ui/themes";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import z from "zod";
+import { useNavigationInView } from "@/context/NavigationInViewProvider";
 
 const ConnectWithMe = () => {
   type emailMessage = z.infer<typeof emailSchema>;
+  const { ContactRef } = useNavigationInView();
 
   const {
     register,
@@ -26,7 +28,7 @@ const ConnectWithMe = () => {
   };
 
   return (
-    <Section>
+    <Section id="contact" ref={ContactRef}>
       <Heading as="h1">Connect with me</Heading>
       <form className="flex flex-col gap-5" onSubmit={handleSubmit(onsubmit)}>
         <Box className="max-w-[500px]">

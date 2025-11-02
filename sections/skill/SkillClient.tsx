@@ -1,13 +1,34 @@
-import { prisma } from "@/prisma/client";
-import SkillClient from "./SkillSection";
+"use client";
 
-const SkillSection = async () => {
-  const skills = await prisma.skill.findMany();
+import Card from "@/components/Card";
+import { Container, Grid, Heading, Section } from "@radix-ui/themes";
+import { Skill } from "@prisma/client";
+import { useNavigationInView } from "@/context/NavigationInViewProvider";
+
+const SkillClient = ({ skills }: { skills: Skill[] }) => {
+  const { SkillRef } = useNavigationInView();
+
   return (
-    <>
-      <SkillClient skills={skills} />
-    </>
+    <Section id="skill" ref={SkillRef}>
+      <Heading as="h1">Skill-Set</Heading>
+      <Container className="px-3">
+        <Grid
+          columns={{ initial: "2", md: "repeat(3, 1fr)" }}
+          gapX="9"
+          gapY="8"
+        >
+          {skills.map((skill) => (
+            <Card
+              key={skill.id}
+              icon={skill.icon}
+              title={skill.title}
+              description={skill.description}
+            />
+          ))}
+        </Grid>
+      </Container>
+    </Section>
   );
 };
 
-export default SkillSection;
+export default SkillClient;

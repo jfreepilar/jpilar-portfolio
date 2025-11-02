@@ -1,6 +1,6 @@
 "use client";
 
-import { navItems } from "@/config/navItems";
+import { NAV_ITEMS } from "@/config/navItems";
 import { Button, Container, Flex, Text } from "@radix-ui/themes";
 import { Menu } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -30,6 +30,7 @@ const NavBar = () => {
       className={`mb-5 h-12 p-3 bg-charade z-10 border-b-1 border-b-white/10 ${
         fixed ? "fixed w-full" : "relative"
       }`}
+      id="about-me"
     >
       <Container className="max-w-6xl mx-auto">
         <Flex justify="between" className={`${flexTransition}`}>
@@ -43,7 +44,7 @@ const NavBar = () => {
               fixed ? "pr-[200px] gap-10" : "gap-20"
             }`}
           >
-            {navItems.map((navItem, index) => (
+            {NAV_ITEMS.map((navItem, index) => (
               <NavLink key={index} href={navItem.href}>
                 {navItem.label}
               </NavLink>
@@ -67,7 +68,7 @@ const NavBar = () => {
                   : "opacity-0 scale-95 pointer-events-none"
               }`}
             >
-              {navItems.map((navItem, index) => (
+              {NAV_ITEMS.map((navItem, index) => (
                 <Container key={index} className="text-end">
                   <NavLink href={navItem.href}>{navItem.label}</NavLink>
                 </Container>

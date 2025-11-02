@@ -3,7 +3,7 @@ import { Project } from "@prisma/client";
 import { Box, Flex, Grid } from "@radix-ui/themes";
 import Image from "next/image";
 
-const ProjectLargerScreen = async ({ projects }: { projects: Project[] }) => {
+const ProjectLargerScreen = ({ projects }: { projects: Project[] }) => {
   const boxStyling = (index: number) => {
     if (index === 0 || index === 4) {
       return "row-span-2 h-full";

@@ -1,3 +1,5 @@
+"use client";
+
 import RadixButton from "@/components/Button";
 import {
   Box,
@@ -9,10 +11,12 @@ import {
   Text,
 } from "@radix-ui/themes";
 import Image from "next/image";
+import { useNavigationInView } from "@/context/NavigationInViewProvider";
 
 const AboutMe = () => {
+  const { AboutMeRef } = useNavigationInView();
   return (
-    <Section pt="0">
+    <Section pt="0" id="about-me" ref={AboutMeRef}>
       <Grid
         columns={{ initial: "1", md: "2" }}
         width="full"

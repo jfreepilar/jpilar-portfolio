@@ -13,6 +13,14 @@
   --color-martinique: #302c44;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 60px;
+}
+
 h1,
 h2,
 h3 {

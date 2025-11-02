@@ -1,6 +1,6 @@
-export const navItems: { label: string; href: string }[] = [
-  { label: "About Me", href: "#" },
-  { label: "Skill", href: "#" },
-  { label: "Poject", href: "#" },
-  { label: "Contact", href: "#" },
+export const NAV_ITEMS: { label: string; href: string }[] = [
+  { label: "About Me", href: "#about-me" },
+  { label: "Skill", href: "#skill" },
+  { label: "Poject", href: "#project" },
+  { label: "Contact", href: "#contact" },
 ];
