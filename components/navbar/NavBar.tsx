@@ -1,9 +1,10 @@
 "use client";
 
-import { Container, Flex, Text } from "@radix-ui/themes";
+import { Box, Container, Flex, Text } from "@radix-ui/themes";
 import { useEffect, useState } from "react";
 import NavLargeScreen from "./NavLargeScreen";
 import NavSmallScreen from "./NavSmallScreen";
+import Image from "next/image";
 
 const NavBar = () => {
   const [open, setOpen] = useState(false);
@@ -34,13 +35,18 @@ const NavBar = () => {
           justify="between"
           className="transition-all duration-500 ease-in items-center"
         >
-          <Text
+          <Box
             className={`"transition-all duration-500 ease-in" ${
               fixed ? "pl-0 lg:pl-[200px]" : ""
             }`}
           >
-            JOEFFREY PILAR
-          </Text>
+            <Image
+              src="/my-logo.png"
+              alt="Website logo"
+              width="40"
+              height="40"
+            />
+          </Box>
 
           <NavLargeScreen fixed={fixed} />
 
