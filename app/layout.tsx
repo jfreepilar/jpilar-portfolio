@@ -5,7 +5,7 @@ import { Box, Container, Theme } from "@radix-ui/themes";
 import "@radix-ui/themes/styles.css";
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
-import NavBar from "../components/NavBar";
+import NavBar from "@/components/navbar/NavBar";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -42,7 +42,7 @@ export default function RootLayout({
           <NavigationInViewProvider>
             <Box p="2">
               <Container>{children}</Container>
-              <Box className="fixed top-38 right-1 xl:right-20 z-50">
+              <Box className="fixed top-52 lg:top-38 right-2 xl:right-20 z-50">
                 <DotNavigation />
               </Box>
             </Box>
