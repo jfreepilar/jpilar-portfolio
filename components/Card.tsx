@@ -3,7 +3,7 @@
 import { Flex, Heading, Card as RadixCard, Text } from "@radix-ui/themes";
 import RenderIcon from "./RenderIcon";
 import Image from "next/image";
-import LinkButton from "./LinkButton";
+import CardButton from "./CardButton";
 
 interface cardProps {
   key: string;
@@ -68,7 +68,7 @@ const Card = ({
 
         {isImage && (
           <Flex direction={{ initial: "column", sm: "row" }} gapX="5" gap="2">
-            <LinkButton githubLink={github!} domainLink={domain!} />
+            <CardButton githubLink={github!} domainLink={domain!} />
           </Flex>
         )}
       </Flex>

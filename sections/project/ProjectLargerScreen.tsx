@@ -1,4 +1,4 @@
-import LinkButton from "@/components/LinkButton";
+import CardButton from "@/components/CardButton";
 import { Project } from "@prisma/client";
 import { Box, Flex, Grid } from "@radix-ui/themes";
 import Image from "next/image";
@@ -53,7 +53,7 @@ const ProjectLargerScreen = ({ projects }: { projects: Project[] }) => {
               <p className="">{project.description}</p>
 
               <Flex pt="2" gapX="3">
-                <LinkButton
+                <CardButton
                   githubLink={project.github}
                   domainLink={project.domain}
                 />
