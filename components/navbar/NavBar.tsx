@@ -25,7 +25,7 @@ const NavBar = () => {
 
   return (
     <Flex
-      className={`mb-5 h-12 p-3 bg-charade z-10 border-b-1 border-b-white/10 items-center ${
+      className={`mb-5 min-h-fit px-2 py-1 bg-charade z-10 border-b-1 border-b-white/10 items-center ${
         fixed ? "fixed w-full" : "relative"
       }`}
       id="about-me"
@@ -43,8 +43,9 @@ const NavBar = () => {
             <Image
               src="/my-logo.png"
               alt="Website logo"
-              width="40"
-              height="40"
+              width="50"
+              height="50"
+              className="lg:w-[60px] lg:h-[60px]"
             />
           </Box>
 
