@@ -1,6 +1,7 @@
 "use client";
 
-import RadixButton from "@/components/Button";
+import CustomButton from "@/components/Button";
+import { useNavigationInView } from "@/context/NavigationInViewProvider";
 import {
   Box,
   Container,
@@ -11,7 +12,7 @@ import {
   Text,
 } from "@radix-ui/themes";
 import Image from "next/image";
-import { useNavigationInView } from "@/context/NavigationInViewProvider";
+import { aboutMeButtonContent } from "@/config/aboutMeButtonContent";
 
 const AboutMe = () => {
   const { AboutMeRef } = useNavigationInView();
@@ -55,20 +56,21 @@ const AboutMe = () => {
               className="gap-4"
               justify={{ initial: "center", md: "start" }}
             >
-              <RadixButton text="Download Resume"></RadixButton>
-              <RadixButton text="View Certificate"></RadixButton>
+              {aboutMeButtonContent.map((item, index) => (
+                <CustomButton key={index} href={item.href} text={item.text} />
+              ))}
             </Flex>
           </Container>
         </Flex>
-        <Container className="order-1 lg:order-2 mt-[-90px]">
+        <Box className="order-1 lg:order-2 relative mt-[-70px] lg:mt-0">
           <Image
             src="/profile.png"
             alt="My profile picture"
-            width={300}
-            height={300}
-            className="mx-auto"
-          ></Image>
-        </Container>
+            width={350}
+            height={350}
+            className="relative mx-auto lg:absolute lg:top-[-65px] lg:right-20"
+          />
+        </Box>
       </Grid>
     </Section>
   );
