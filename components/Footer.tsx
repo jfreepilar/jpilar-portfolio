@@ -52,10 +52,9 @@ const Footer = () => {
         </Box>
         <Flex gap="5">
           {socialIcons.map((socialIcon, index) => (
-            <Link href={socialIcon.link} target="_blank">
+            <Link href={socialIcon.link} target="_blank" key={index}>
               <Text
                 as="span"
-                key={index}
                 className="text-md md:text-xl transition-all duration-600 ease-in-out hover:text-mandy"
               >
                 {socialIcon.icon}

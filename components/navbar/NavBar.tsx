@@ -1,10 +1,10 @@
 "use client";
 
-import { Box, Container, Flex, Text } from "@radix-ui/themes";
+import { Box, Container, Flex } from "@radix-ui/themes";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import NavLargeScreen from "./NavLargeScreen";
 import NavSmallScreen from "./NavSmallScreen";
-import Image from "next/image";
 
 const NavBar = () => {
   const [open, setOpen] = useState(false);
